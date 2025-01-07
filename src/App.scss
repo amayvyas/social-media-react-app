@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", serif;
+    /* outline: 1px solid red; */
+}
+
+$themes: (
+    light: (
+        textColor: #000,
+        bg: white,
+        logo: darkblue,
+        bgSoft: #f6f3f3,
+        textColorSoft: #555,
+        border: lightgray
+    ),
+    dark: (
+        textColor: whitesmoke,
+        bg: #222,
+        logo: white,
+        bgSoft: #333,
+        textColorSoft: lightgray,
+        border: #444
+    )
+);
+
+@mixin themify($themes) {
+    @each $theme, $properties in $themes {
+        .theme-#{$theme} {
+            @each $property, $value in $properties {
+                --#{$property}: #{$value}; // Define CSS custom properties
+            }
+        }
+    }
+}
+
+// Apply the mixin to generate theme classes
+@include themify($themes);
+
+
+@mixin mobile {
+    @media(max-width:480px){
+      @content;  
+    }
+}
+
+
+@mixin tablet {
+    @media(max-width:960px){
+      @content;  
+    }
+}

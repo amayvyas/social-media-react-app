@@ -1,0 +1,50 @@
+@use "../../App.scss" as app;
+
+.stories{
+    display: flex;
+    gap: 10px;
+    height: 250px;
+    margin-bottom: 30px;
+
+    @include app.tablet {
+        height: 150px;
+        gap: 20px;
+    }
+
+    @include app.mobile {
+        height: 50px;
+        justify-content: space-between;
+    }
+
+    .story{
+        flex: 1;
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+
+        @include app.mobile {
+            flex: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        span{
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: white;
+            font-weight: 500;
+
+            @include app.mobile {
+                display: none; /* Hide on mobile devices */
+            }
+        }
+    }
+}

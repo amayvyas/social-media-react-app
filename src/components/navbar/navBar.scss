@@ -1,0 +1,85 @@
+@use "../../App.scss" as app;
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    height: 50px;
+    border-bottom: 1px solid var(--border);
+    background-color: var(--bg);
+    top: 0;
+    position: sticky;
+    color: var(--textColor);
+    z-index: 999;
+
+    .left {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+
+        span {
+            font-weight: bold;
+            font-size: 20px;
+            color: var(--logo);
+        }
+
+        .search {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid var(--border);
+            border-radius: 5px;
+            padding: 5px;
+
+            input {
+                border: none;
+                width: 500px;
+                color: var(--textColor);
+                background-color: transparent;
+
+                @include app.mobile {
+                    display: none; /* Hide on mobile devices */
+                }
+
+                @include app.tablet {
+                    width: 200px;
+                }
+            
+            }
+        }
+    }
+
+    .right {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        @include app.mobile {
+            display: none; /* Hide on mobile devices */
+        }
+
+        .user {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+
+            @include app.tablet {
+                display: none; /* Hide on mobile devices */
+            }
+
+            img {
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+
+            span {
+                font-weight: 500;
+                color: var(--textColor);
+            }
+        }
+    }
+}

@@ -1,0 +1,14 @@
+@use "../../App.scss" as app;
+
+.home {
+    background-color: var(--bgSoft);
+    padding: 20px 70px;
+
+    @include app.mobile {
+        padding: 10px;
+    }
+
+    @include app.tablet {
+        padding: 20px;
+    }
+}
