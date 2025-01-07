@@ -1,4 +1,4 @@
-import './app.scss';
+import "./app.scss";
 import { createBrowserRouter, Navigate, Outlet, RouterProvider } from "react-router-dom";
 import Login from "../src/pages/login/Login";
 import Register from './pages/register/Register';
